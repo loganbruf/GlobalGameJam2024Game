@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://can8ppce74pd3"]
+[gd_scene load_steps=6 format=3 uid="uid://can8ppce74pd3"]
 
 [ext_resource type="Script" path="res://Scripts/CombatScripts/Player.gd" id="3_u6jvw"]
 [ext_resource type="Texture2D" uid="uid://bvigsiafddfex" path="res://Sprites/ShitMoneyCryGlasses.png" id="4_tbhi3"]
-[ext_resource type="PackedScene" uid="uid://bw0rgs5xbyowe" path="res://Scenes/CombatScenes/CircleEnemy.tscn" id="4_tcfnv"]
 [ext_resource type="Script" path="res://Scripts/CombatScripts/Area2D.gd" id="5_mlwrf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_334fr"]
@@ -42,7 +41,3 @@ z_index = -1
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0.164706, 0.164706, 0.164706, 1)
-
-[node name="CircleEnemy" parent="." instance=ExtResource("4_tcfnv")]
-position = Vector2(576, 324)
-center = Vector2(576, 324)
