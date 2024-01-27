@@ -22,13 +22,13 @@ func _ready():
 	print(screenSize);
 	position.x = screenSize[0]*0.5;
 	position.y = screenSize[1]*0.5;
-
+	get_tree().root.connect("size_changed", _on_viewport_size_changed);
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	doMovementPhase(delta);
 	doCollisionPhase(delta);
-	
+
 func doMovementPhase(delta):
 	var movingDown = 0;
 	if (Input.is_action_pressed("move up")):
@@ -78,3 +78,12 @@ func doCollisionPhase(delta):
 			health -= highestAttackDamage;
 			cooldownTimer = cooldownLength;
 			print("took " + str(highestAttackDamage) + " damage");
+
+func _on_viewport_size_changed():
+	var generalPosX = position.x - 0.5 * screenSize[0];
+	var generalPosY = position.y - 0.5 * screenSize[1];
+	
+	screenSize = get_viewport_rect().size;
+	print(screenSize);
+	position.x = screenSize[0]*0.5 + generalPosX;
+	position.y = screenSize[1]*0.5 + generalPosY;

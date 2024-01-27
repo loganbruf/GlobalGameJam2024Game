@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://can8ppce74pd3"]
+
+[ext_resource type="Script" path="res://Bullet.gd" id="1_3gxeb"]
+[ext_resource type="Script" path="res://Player.gd" id="1_y1qbj"]
+[ext_resource type="Texture2D" uid="uid://bvigsiafddfex" path="res://Sprites/ShitMoneyCryGlasses.png" id="2_prmkf"]
+[ext_resource type="Texture2D" uid="uid://dad0c7vqov85x" path="res://Sprites/halloween.webp" id="3_y4bg4"]
+[ext_resource type="Script" path="res://Area2D.gd" id="5_dhn71"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_od8bg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rnx8s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_y4bg4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_334fr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_prmkf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfttm"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Bullet" type="Area2D" parent="."]
+position = Vector2(400, 200)
+script = ExtResource("1_3gxeb")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet"]
+shape = SubResource("RectangleShape2D_od8bg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bullet"]
+scale = Vector2(0.15, 0.15)
+sprite_frames = SubResource("SpriteFrames_rnx8s")
+
+[node name="Player" type="Area2D" parent="."]
+position = Vector2(576, 324)
+script = ExtResource("1_y1qbj")
+speed = null
+squareSize = null
+maxHealth = null
+playerWidth = null
+cooldownLength = null
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_334fr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_mfttm")
+
+[node name="PlayFieldVisibility" type="Area2D" parent="."]
+scale = Vector2(10, 10)
+script = ExtResource("5_dhn71")
+
+[node name="ColorRect" type="ColorRect" parent="PlayFieldVisibility"]
+z_index = -1
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.164706, 0.164706, 0.164706, 1)
