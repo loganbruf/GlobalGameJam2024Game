@@ -22,5 +22,5 @@ func _on_viewport_size_changed():
 	position.x = screenSize[0]*0.5 + generalPosX;
 	position.y = screenSize[1]*0.5 + generalPosY;
 
-func doMovementPhase(delta):
+func doMovementPhase(_delta):
 	pass;

@@ -23,7 +23,7 @@ func doBulletCheck():
 			if (health <= 0):
 				call_deferred("free");
 
-func doMovementPhase(delta):
+func doMovementPhase(_delta):
 	pass;
 
 func _on_viewport_size_changed():
