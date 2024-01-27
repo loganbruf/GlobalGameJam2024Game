@@ -116,3 +116,4 @@ func _on_viewport_size_changed():
 	print(screenSize);
 	position.x = screenSize[0]*0.5 + generalPosX;
 	position.y = screenSize[1]*0.5 + generalPosY;
+
