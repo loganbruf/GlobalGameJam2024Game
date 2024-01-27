@@ -1,6 +1,6 @@
 extends Area2D
 
-var damage = 1;
+@export var damage = 1;
 var screenSize;
 
 # Called when the node enters the scene tree for the first time.
