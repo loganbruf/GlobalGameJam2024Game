@@ -8,6 +8,8 @@ var screenSize;
 func _ready():
 	screenSize = get_viewport_rect().size;
 	print(screenSize);
+	position.x = screenSize[0]*0.5;
+	position.y = screenSize[1]*0.5;
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
