@@ -12,5 +12,5 @@ func _process(delta):
 
 
 func start_game_scene():
-	SceneVariables.goto_scene("res://Scenes/UIScenes/GameScene.tscn")
+	SceneVariables.goto_scene("res://Scenes/Cutscenes/cutscene1.tscn")
 

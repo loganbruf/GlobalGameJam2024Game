@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d0tjskni0bagb"]
 
-[ext_resource type="Script" path="res://Scripts/CutsceneScripts/CutsceneManager.gd" id="1_pmlnx"]
-[ext_resource type="Resource" uid="uid://bn3dn1xuagoxy" path="res://dialogue/main.dialogue" id="2_60tjq"]
+[ext_resource type="Script" path="res://Scripts/CutsceneScripts/CutsceneManager.gd" id="1_foahk"]
+[ext_resource type="Resource" uid="uid://bn3dn1xuagoxy" path="res://dialogue/main.dialogue" id="2_rs80w"]
 
 [sub_resource type="GDScript" id="GDScript_wfgtb"]
 script/source = "extends Label
@@ -18,10 +18,10 @@ func _process(delta):
 "
 
 [node name="Cutscene" type="Node2D"]
-script = ExtResource("1_pmlnx")
-resource = ExtResource("2_60tjq")
+script = ExtResource("1_foahk")
+resource = ExtResource("2_rs80w")
 dialogue_key = "start"
-next_scene = "res://Scenes/CombatScenes/CombatScene.tscn"
+next_scene = "res://Scenes/UIScenes/GameScene.tscn"
 
 [node name="AnyKey" type="Label" parent="."]
 offset_left = 336.0
