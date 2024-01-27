@@ -13,6 +13,11 @@ var screenSize;
 @export var cooldownLength = 0.5;
 var cooldownTimer = 0;
 
+@export var shotCooldownLength = 0.5;
+var shotCooldownTimer = 0;
+var fireDirection = Vector2(0, 1);
+var bulletPrefab = preload("res://Scenes/CombatScenes/PlayerBullet.tscn");
+
 const root2 = 1.4142;
 const root2Inverse = 0.70710;
 
@@ -28,6 +33,7 @@ func _ready():
 func _process(delta):
 	doMovementPhase(delta);
 	doCollisionPhase(delta);
+	tryFire(delta);
 
 func doMovementPhase(delta):
 	var movingDown = 0;
@@ -44,9 +50,12 @@ func doMovementPhase(delta):
 	
 	var velocity;
 	if (movingDown != 0 && movingRight != 0):
-		velocity = Vector2(movingRight*speed*root2Inverse, movingDown*speed*root2Inverse);
+		fireDirection = Vector2(movingRight*root2Inverse, movingDown*root2Inverse);
+		velocity = fireDirection * speed;
 	else:
 		velocity = Vector2(movingRight*speed, movingDown*speed);
+		if (velocity.x != 0 || velocity.y != 0):
+			fireDirection = velocity / speed;
 	
 	position += velocity * delta;
 	
@@ -69,7 +78,7 @@ func doCollisionPhase(delta):
 	if (cooldownTimer == 0):
 		for collision in get_overlapping_areas():
 			if !("damage" in collision):
-				pass;
+				continue;
 			
 			var damage = collision.damage;
 			print(collision.name + ": " + str(damage) + " damage");
@@ -82,6 +91,23 @@ func doCollisionPhase(delta):
 			cooldownTimer = cooldownLength;
 			print("took " + str(highestAttackDamage) + " damage");
 
+func tryFire(delta):
+	shotCooldownTimer -= delta;
+	shotCooldownTimer = max(shotCooldownTimer, 0);
+	
+	if (shotCooldownTimer != 0):
+		return;
+	
+	if (Input.is_action_pressed("fire")):
+		var bulletInstance = bulletPrefab.instantiate();
+		bulletInstance.direction = fireDirection;
+		bulletInstance.position = position;
+		shotCooldownTimer = shotCooldownLength;
+		print(bulletInstance.position);
+		print(bulletInstance.direction);
+		get_parent().add_child(bulletInstance);
+		
+
 func _on_viewport_size_changed():
 	var generalPosX = position.x - 0.5 * screenSize[0];
 	var generalPosY = position.y - 0.5 * screenSize[1];
@@ -90,3 +116,4 @@ func _on_viewport_size_changed():
 	print(screenSize);
 	position.x = screenSize[0]*0.5 + generalPosX;
 	position.y = screenSize[1]*0.5 + generalPosY;
+
