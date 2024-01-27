@@ -1,0 +1,83 @@
+[gd_scene load_steps=11 format=3 uid="uid://can8ppce74pd3"]
+
+[ext_resource type="Script" path="res://Scripts/CombatScripts/Bullet.gd" id="1_8inyh"]
+[ext_resource type="Texture2D" uid="uid://dad0c7vqov85x" path="res://Sprites/halloween.webp" id="2_eirpe"]
+[ext_resource type="Script" path="res://Scripts/CombatScripts/Player.gd" id="3_u6jvw"]
+[ext_resource type="Texture2D" uid="uid://bvigsiafddfex" path="res://Sprites/ShitMoneyCryGlasses.png" id="4_tbhi3"]
+[ext_resource type="Script" path="res://Scripts/CombatScripts/Area2D.gd" id="5_mlwrf"]
+[ext_resource type="Script" path="res://Scripts/CombatScripts/Axe.gd" id="6_fu8ys"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_od8bg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rnx8s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_eirpe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_334fr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_tbhi3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfttm"]
+
+[node name="CombatScene" type="Node2D"]
+
+[node name="Bullet" type="Area2D" parent="."]
+position = Vector2(400, 200)
+script = ExtResource("1_8inyh")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet"]
+shape = SubResource("RectangleShape2D_od8bg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bullet"]
+scale = Vector2(0.15, 0.15)
+sprite_frames = SubResource("SpriteFrames_rnx8s")
+
+[node name="Player" type="Area2D" parent="."]
+position = Vector2(576, 324)
+script = ExtResource("3_u6jvw")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_334fr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_mfttm")
+
+[node name="PlayFieldVisibility" type="Area2D" parent="."]
+scale = Vector2(10, 10)
+script = ExtResource("5_mlwrf")
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="PlayFieldVisibility"]
+z_index = -1
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.164706, 0.164706, 0.164706, 1)
+
+[node name="Axe" type="Area2D" parent="."]
+position = Vector2(500, 200)
+script = ExtResource("6_fu8ys")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Axe"]
+shape = SubResource("RectangleShape2D_od8bg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Axe"]
+scale = Vector2(0.15, 0.15)
+sprite_frames = SubResource("SpriteFrames_rnx8s")
