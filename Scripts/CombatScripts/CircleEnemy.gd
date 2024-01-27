@@ -1,7 +1,7 @@
 extends GeneralEnemy
 
 var radius = 100;
-var center = Vector2(0, 0);
+@export var center = Vector2(0, 0);
 var angle = 0;
 var angularSpeed = PI/2; #degrees per scond I think
 

@@ -78,7 +78,7 @@ func doCollisionPhase(delta):
 	if (cooldownTimer == 0):
 		for collision in get_overlapping_areas():
 			if !("damage" in collision):
-				pass;
+				continue;
 			
 			var damage = collision.damage;
 			print(collision.name + ": " + str(damage) + " damage");
