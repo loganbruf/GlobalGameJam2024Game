@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://can8ppce74pd3"]
+[gd_scene load_steps=9 format=3 uid="uid://can8ppce74pd3"]
 
 [ext_resource type="Script" path="res://Bullet.gd" id="1_3gxeb"]
 [ext_resource type="Script" path="res://Player.gd" id="1_y1qbj"]
 [ext_resource type="Texture2D" uid="uid://bvigsiafddfex" path="res://Sprites/ShitMoneyCryGlasses.png" id="2_prmkf"]
 [ext_resource type="Texture2D" uid="uid://dad0c7vqov85x" path="res://Sprites/halloween.webp" id="3_y4bg4"]
-[ext_resource type="Script" path="res://Area2D.gd" id="5_dhn71"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_od8bg"]
 
@@ -57,13 +56,3 @@ sprite_frames = SubResource("SpriteFrames_334fr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("RectangleShape2D_mfttm")
-
-[node name="PlayFieldVisibility" type="Area2D" parent="."]
-scale = Vector2(10, 10)
-script = ExtResource("5_dhn71")
-
-[node name="ColorRect" type="ColorRect" parent="PlayFieldVisibility"]
-z_index = -1
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0.164706, 0.164706, 0.164706, 1)
