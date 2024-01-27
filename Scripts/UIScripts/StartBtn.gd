@@ -10,5 +10,6 @@ func _ready():
 func _process(delta):
 	pass
 
+
 func start_game_scene():
 	print("Start")
