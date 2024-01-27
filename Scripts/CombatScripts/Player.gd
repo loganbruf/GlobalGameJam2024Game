@@ -95,8 +95,6 @@ func tryFire(delta):
 	shotCooldownTimer -= delta;
 	shotCooldownTimer = max(shotCooldownTimer, 0);
 	
-	print(shotCooldownTimer); #these are load bearing walls jerry
-	
 	if (shotCooldownTimer != 0):
 		return;
 	

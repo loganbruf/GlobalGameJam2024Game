@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://can8ppce74pd3"]
+[gd_scene load_steps=10 format=3 uid="uid://can8ppce74pd3"]
 
 [ext_resource type="Script" path="res://Scripts/CombatScripts/Player.gd" id="3_u6jvw"]
+[ext_resource type="Script" path="res://Scripts/CombatScripts/GeneralEnemy.gd" id="4_drvnu"]
+[ext_resource type="Texture2D" uid="uid://2wj6j116hrvu" path="res://Sprites/Filth.webp" id="4_m1v6h"]
 [ext_resource type="Texture2D" uid="uid://bvigsiafddfex" path="res://Sprites/ShitMoneyCryGlasses.png" id="4_tbhi3"]
 [ext_resource type="Script" path="res://Scripts/CombatScripts/Area2D.gd" id="5_mlwrf"]
 
@@ -16,6 +18,20 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mfttm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqj8h"]
+size = Vector2(33, 115)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ikn1w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_m1v6h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="CombatScene" type="Node2D"]
 
@@ -41,3 +57,15 @@ z_index = -1
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0.164706, 0.164706, 0.164706, 1)
+
+[node name="FILTH" type="Area2D" parent="."]
+position = Vector2(400, 300)
+script = ExtResource("4_drvnu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FILTH"]
+position = Vector2(-0.5, 1.5)
+shape = SubResource("RectangleShape2D_dqj8h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FILTH"]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_ikn1w")
