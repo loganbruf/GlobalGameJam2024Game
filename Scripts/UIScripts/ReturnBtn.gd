@@ -12,4 +12,4 @@ func _process(delta):
 
 
 func return_to_main():
-	print("TODO: swithc scene")
+	SceneVariables.goto_scene("res://Scenes/UIScenes/MainMenu.tscn")

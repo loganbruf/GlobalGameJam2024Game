@@ -22,3 +22,5 @@ func _process(delta):
 func on_take_damage():
 	health -= 1
 	texture = healthBarImgs[health]
+	if health == 0:
+		SceneVariables.goto_scene("res://Scenes/UIScenes/GameOver.tscn")
