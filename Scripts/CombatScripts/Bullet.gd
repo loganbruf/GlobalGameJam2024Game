@@ -7,7 +7,6 @@ var screenSize;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(name + " ready");
 	screenSize = get_viewport_rect().size;
 	get_tree().root.connect("size_changed", _on_viewport_size_changed);
 
