@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://can8ppce74pd3"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_y1qbj"]
+[ext_resource type="Texture2D" uid="uid://bvigsiafddfex" path="res://Sprites/ShitMoneyCryGlasses.png" id="2_prmkf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_334fr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_prmkf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfttm"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" type="Area2D" parent="."]
+position = Vector2(576, 324)
+script = ExtResource("1_y1qbj")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_334fr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_mfttm")
