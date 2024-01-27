@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://cpftybosg5vnr"]
+
+[ext_resource type="PackedScene" uid="uid://bcu0abp4omi0i" path="res://player.tscn" id="1_heof8"]
+[ext_resource type="PackedScene" uid="uid://s4utwemc5tb2" path="res://npc.tscn" id="2_b6kaj"]
+[ext_resource type="PackedScene" uid="uid://5gmt7xt2ud6" path="res://actionable.tscn" id="3_u580q"]
+[ext_resource type="Resource" uid="uid://b3cm1cjeoscnn" path="res://dialogue/main.dialogue" id="4_b0vy7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jcuec"]
+radius = 98.0816
+
+[node name="World" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_heof8")]
+position = Vector2(560, 322)
+
+[node name="NPC" parent="." instance=ExtResource("2_b6kaj")]
+position = Vector2(117, 105)
+
+[node name="Actionable" parent="NPC" instance=ExtResource("3_u580q")]
+dialogue_resource = ExtResource("4_b0vy7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Actionable"]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_jcuec")
