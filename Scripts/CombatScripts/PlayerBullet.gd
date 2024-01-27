@@ -12,4 +12,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func doMovementPhase(delta):
 	position += delta * direction * speed;
+	var bulletAngle = atan2(direction[0], direction[1]);
+	
+	rotation = bulletAngle;
 
