@@ -5,6 +5,9 @@ extends Node2D
 @export var next_scene: String
 var is_dialogue_open : bool = false
 
+func _ready():
+	$EnterKey.hide()
+
 func _process(delta):
 	if Input.is_action_just_pressed("next"):
 		SceneVariables.goto_scene(next_scene)
@@ -12,6 +15,8 @@ func _process(delta):
 func _input(event):
 	if event is InputEventKey && !is_dialogue_open:
 		is_dialogue_open = true
+		$AnyKey.hide()
+		$EnterKey.show()
 		open_dialogue()
 	
 func open_dialogue():
