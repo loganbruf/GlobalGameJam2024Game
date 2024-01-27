@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2jpbo1q6sb35"]
+
+[ext_resource type="Script" path="res://Scripts/CombatScripts/Bullet.gd" id="1_tma3l"]
+[ext_resource type="Texture2D" uid="uid://dad0c7vqov85x" path="res://Sprites/halloween.webp" id="2_7gwpw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_od8bg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rnx8s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7gwpw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Bullet" type="Area2D"]
+script = ExtResource("1_tma3l")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_od8bg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+sprite_frames = SubResource("SpriteFrames_rnx8s")
