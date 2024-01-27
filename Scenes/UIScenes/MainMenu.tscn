@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://bajvnlapgpgpb"]
+
+[ext_resource type="Script" path="res://Scripts/UIScripts/StartBtn.gd" id="1_41ghf"]
+[ext_resource type="Script" path="res://Scripts/UIScripts/QuitBtn.gd" id="2_u5gfm"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -3.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 212.0
+offset_top = 33.0
+offset_right = 359.0
+offset_bottom = 60.0
+scale = Vector2(5, 5)
+text = "(Title of our gaem)"
+scroll_active = false
+
+[node name="StartBtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 212.0
+offset_right = 744.0
+offset_bottom = 292.0
+text = "Start"
+script = ExtResource("1_41ghf")
+
+[node name="QuitBtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 374.0
+offset_top = 329.0
+offset_right = 741.0
+offset_bottom = 408.0
+text = "Quit "
+script = ExtResource("2_u5gfm")

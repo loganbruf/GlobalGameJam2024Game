@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0tjskni0bagb"]
+
+[ext_resource type="Script" path="res://Scripts/CutsceneManager.gd" id="1_pmlnx"]
+[ext_resource type="Resource" uid="uid://bn3dn1xuagoxy" path="res://dialogue/main.dialogue" id="2_60tjq"]
+
+[node name="Cutscene" type="Node2D"]
+script = ExtResource("1_pmlnx")
+resource = ExtResource("2_60tjq")
+dialogue_key = "start"
+next_scene = "res://Scenes/CombatScenes/CombatScene.tscn"
