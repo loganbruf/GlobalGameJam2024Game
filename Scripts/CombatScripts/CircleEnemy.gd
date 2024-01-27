@@ -8,8 +8,7 @@ var angularSpeed = PI/2; #degrees per scond I think
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	health = 2;
-	screenSize = get_viewport_rect().size;
-	get_tree().root.connect("size_changed", _on_viewport_size_changed);
+	super._ready();
 
 func doMovementPhase(delta):
 	angle += angularSpeed * delta;
