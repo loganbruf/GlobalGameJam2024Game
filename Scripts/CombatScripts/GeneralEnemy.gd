@@ -3,6 +3,7 @@ class_name GeneralEnemy
 
 var health = 0;
 var screenSize;
+var damage = 1;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
