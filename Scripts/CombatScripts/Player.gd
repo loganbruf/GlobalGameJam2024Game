@@ -53,8 +53,8 @@ func doMovementPhase(delta):
 	#this is how we're doing a game box border for the moment 
 	position.x = clamp(position.x, 0.5*screenSize[0]+playerHalfWidth-squareSize, 
 			0.5*screenSize[0]-playerHalfWidth+squareSize);
-	position.y = clamp(position.y, 0.5*screenSize[1]+playerHalfWidth-squareSize, 
-			0.5*screenSize[1]-playerHalfWidth+squareSize);
+	position.y = clamp(position.y, 0.6*screenSize[1]+playerHalfWidth-squareSize, 
+			0.6*screenSize[1]-playerHalfWidth+squareSize);
 
 func doCollisionPhase(delta):
 	cooldownTimer -= delta;
