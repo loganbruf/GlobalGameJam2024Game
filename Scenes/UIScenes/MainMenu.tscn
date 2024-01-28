@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bajvnlapgpgpb"]
+[gd_scene load_steps=5 format=3 uid="uid://bajvnlapgpgpb"]
 
 [ext_resource type="Script" path="res://Scripts/UIScripts/StartBtn.gd" id="1_41ghf"]
 [ext_resource type="Script" path="res://Scripts/UIScripts/QuitBtn.gd" id="2_u5gfm"]
 [ext_resource type="Texture2D" uid="uid://cmdctdxjd2vsg" path="res://Sprites/Dinkles_Dungbottom.png" id="3_1bfol"]
+[ext_resource type="Texture2D" uid="uid://dlp8de0q52sv3" path="res://Sprites/sunshine.png" id="4_x5gx1"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -46,3 +47,8 @@ script = ExtResource("2_u5gfm")
 position = Vector2(256, 398)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_1bfol")
+
+[node name="sunshine" type="Sprite2D" parent="."]
+position = Vector2(1012, 308)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_x5gx1")
