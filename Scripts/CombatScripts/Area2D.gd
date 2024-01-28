@@ -16,8 +16,8 @@ func _process(_delta):
 
 func _on_viewport_size_changed():
 	var generalPosX = position.x - 0.5 * screenSize[0];
-	var generalPosY = position.y - 0.5 * screenSize[1];
+	var generalPosY = position.y - 0.6 * screenSize[1];
 	
 	screenSize = get_viewport_rect().size;
 	position.x = screenSize[0]*0.5 + generalPosX;
-	position.y = screenSize[1]*0.5 + generalPosY;
+	position.y = screenSize[1]*0.6 + generalPosY;

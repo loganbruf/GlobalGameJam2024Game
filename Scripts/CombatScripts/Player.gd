@@ -2,8 +2,6 @@ extends Area2D
 
 @export var speed = 200;
 @export var squareSize = 200;
-@export var maxHealth = 3;
-var health = maxHealth;
 
 @export var playerWidth = 20;
 var playerHalfWidth = playerWidth* 0.5;
@@ -24,7 +22,6 @@ const root2Inverse = 0.70710;
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screenSize = get_viewport_rect().size;
-	print(screenSize);
 	position.x = screenSize[0]*0.5;
 	position.y = screenSize[1]*0.5;
 	get_tree().root.connect("size_changed", _on_viewport_size_changed);
@@ -87,7 +84,7 @@ func doCollisionPhase(delta):
 			tookDamage = true;
 		
 		if (tookDamage):
-			health -= highestAttackDamage;
+			GlobalVariables.take_damage(highestAttackDamage)
 			cooldownTimer = cooldownLength;
 			print("took " + str(highestAttackDamage) + " damage");
 
@@ -110,10 +107,9 @@ func tryFire(delta):
 
 func _on_viewport_size_changed():
 	var generalPosX = position.x - 0.5 * screenSize[0];
-	var generalPosY = position.y - 0.5 * screenSize[1];
+	var generalPosY = position.y - 0.6 * screenSize[1];
 	
 	screenSize = get_viewport_rect().size;
-	print(screenSize);
 	position.x = screenSize[0]*0.5 + generalPosX;
-	position.y = screenSize[1]*0.5 + generalPosY;
+	position.y = screenSize[1]*0.6 + generalPosY;
 
