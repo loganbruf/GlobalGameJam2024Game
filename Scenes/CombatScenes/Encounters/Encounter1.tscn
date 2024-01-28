@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://u5u2td63nqjw"]
+
+[ext_resource type="PackedScene" uid="uid://bf6p7hvyf0n0a" path="res://Scenes/UIScenes/GameScene.tscn" id="1_c1jya"]
+[ext_resource type="PackedScene" uid="uid://c8gdwv67wpxrn" path="res://Scenes/CombatScenes/CircleEnemy.tscn" id="2_6bl3u"]
+
+[node name="Encounter1" type="Node2D"]
+
+[node name="GameScene" parent="." instance=ExtResource("1_c1jya")]
+
+[node name="CircleEnemy" parent="." instance=ExtResource("2_6bl3u")]
+center = Vector2(500, 200)
+
+[node name="CircleEnemy2" parent="." instance=ExtResource("2_6bl3u")]
+center = Vector2(800, 200)
+
+[node name="CircleEnemy3" parent="." instance=ExtResource("2_6bl3u")]
+center = Vector2(650, 400)
+
+[node name="CircleEnemy4" parent="." instance=ExtResource("2_6bl3u")]
+center = Vector2(350, 400)
+
+[node name="CircleEnemy5" parent="." instance=ExtResource("2_6bl3u")]
+center = Vector2(575, 300)

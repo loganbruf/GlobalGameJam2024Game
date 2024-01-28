@@ -63,6 +63,9 @@ func doMovementPhase(delta):
 			0.5*screenSize[0]-playerHalfWidth+squareSize);
 	position.y = clamp(position.y, 0.6*screenSize[1]+playerHalfWidth-squareSize, 
 			0.6*screenSize[1]-playerHalfWidth+squareSize);
+			
+	if (movingRight != 0 || movingDown != 0):
+		rotation = atan2(movingRight, -movingDown);
 
 func doCollisionPhase(delta):
 	cooldownTimer -= delta;
