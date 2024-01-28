@@ -28,10 +28,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	look_at(get_global_mouse_position());
 	doMovementPhase(delta);
 	doCollisionPhase(delta);
 	tryFire(delta);
+	look_at(get_global_mouse_position());
+	rotate(PI/2);
 
 func doMovementPhase(delta):
 	var movingDown = 0;
