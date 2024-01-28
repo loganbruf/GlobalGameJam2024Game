@@ -44,3 +44,8 @@ func addEnemy():
 	livingEnemies+=1;
 	print(livingEnemies);
 	inFight = true;
+
+func resetGame():
+	reset_global_vars();
+	livingEnemies = 0;
+	inFight = false;
