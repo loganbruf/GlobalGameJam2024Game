@@ -31,6 +31,8 @@ func _process(delta):
 	doMovementPhase(delta);
 	doCollisionPhase(delta);
 	tryFire(delta);
+	look_at(get_global_mouse_position());
+	rotate(PI/2);
 
 func doMovementPhase(delta):
 	var movingDown = 0;
@@ -47,7 +49,7 @@ func doMovementPhase(delta):
 	
 	var velocity;
 	if (movingDown != 0 && movingRight != 0):
-		fireDirection = Vector2(movingRight*root2Inverse, movingDown*root2Inverse);
+		fireDirection =  Vector2(movingRight*root2Inverse, movingDown*root2Inverse);
 		velocity = fireDirection * speed;
 	else:
 		velocity = Vector2(movingRight*speed, movingDown*speed);
@@ -61,6 +63,9 @@ func doMovementPhase(delta):
 			0.5*screenSize[0]-playerHalfWidth+squareSize);
 	position.y = clamp(position.y, 0.6*screenSize[1]+playerHalfWidth-squareSize, 
 			0.6*screenSize[1]-playerHalfWidth+squareSize);
+			
+	if (movingRight != 0 || movingDown != 0):
+		rotation = atan2(movingRight, -movingDown);
 
 func doCollisionPhase(delta):
 	cooldownTimer -= delta;
@@ -97,7 +102,7 @@ func tryFire(delta):
 	
 	if (Input.is_action_pressed("fire")):
 		var bulletInstance = bulletPrefab.instantiate();
-		bulletInstance.direction = fireDirection;
+		bulletInstance.direction = (get_global_mouse_position() - position).normalized();
 		bulletInstance.position = position;
 		shotCooldownTimer = shotCooldownLength;
 		print(bulletInstance.position);

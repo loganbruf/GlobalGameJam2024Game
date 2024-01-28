@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://clrfp04h0vo8n"]
+
+[ext_resource type="Script" path="res://Scripts/UIScripts/ShitsAndGiggles.gd" id="1_cymyf"]
+[ext_resource type="Texture2D" uid="uid://wn5o3injpojv" path="res://Sprites/haha1.png" id="1_hhr3b"]
+[ext_resource type="Texture2D" uid="uid://oxjr7mqcaqpi" path="res://Sprites/haha2.png" id="2_b74h1"]
+[ext_resource type="Texture2D" uid="uid://din8xlmpd2uwj" path="res://Sprites/haha3.png" id="3_613fd"]
+[ext_resource type="Texture2D" uid="uid://dlxfks0jebrnu" path="res://Sprites/haha4.png" id="4_lmkar"]
+[ext_resource type="AudioStream" uid="uid://drfov242w46v3" path="res://audio/Laugh.mp3" id="5_npmkh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_khdyl"]
+animations = [{
+"frames": [{
+"duration": 0.7,
+"texture": ExtResource("1_hhr3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_b74h1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_613fd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lmkar")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_elwdq"]
+script/source = "extends AudioStreamPlayer
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func laugh_sound():
+	play()
+"
+
+[node name="ShitsAndGiggles" type="Node2D"]
+script = ExtResource("1_cymyf")
+
+[node name="Laugh" type="AnimatedSprite2D" parent="."]
+position = Vector2(58, -0.999985)
+scale = Vector2(1.72, 1.48)
+sprite_frames = SubResource("SpriteFrames_khdyl")
+
+[node name="Haha" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_npmkh")
+script = SubResource("GDScript_elwdq")

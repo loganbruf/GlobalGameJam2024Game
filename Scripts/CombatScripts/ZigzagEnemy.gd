@@ -4,7 +4,7 @@ var speed = 80;
 
 @export var squareSize = 200;
 
-var zigzagCenter = 0;
+@export var zigzagCenter = 0;
 var zigzagWidth = 80;
 
 var minY;
