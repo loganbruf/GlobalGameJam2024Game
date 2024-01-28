@@ -21,7 +21,7 @@ func _process(delta):
 script = ExtResource("1_foahk")
 resource = ExtResource("2_rs80w")
 dialogue_key = "start"
-next_scene = "res://Scenes/UIScenes/GameScene.tscn"
+next_scene = "res://Scenes/CombatScenes/Encounters/Encounter1.tscn"
 
 [node name="AnyKey" type="Label" parent="."]
 offset_left = 196.0
