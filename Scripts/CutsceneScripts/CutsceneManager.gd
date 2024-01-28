@@ -11,17 +11,17 @@ func _ready():
 	$Sunshine.hide()
 
 func _process(delta):
-	if Input.is_action_just_pressed("next"):
-		SceneVariables.goto_scene(next_scene)
-
-func _input(event):
-	if event is InputEventKey && !is_dialogue_open:
+	if Input.is_action_just_pressed("accept") && !is_dialogue_open:
 		is_dialogue_open = true
 		$AnyKey.hide()
 		$EnterKey.show()
 		$DinklesDungbottom.show()
 		$Sunshine.show()
 		open_dialogue()
+	if Input.is_action_just_pressed("next"):
+		if is_dialogue_open:
+			SceneVariables.goto_scene(next_scene)
+			is_dialogue_open = false
 	
 func open_dialogue():
 	DialogueManager.show_example_dialogue_balloon(resource, dialogue_key)

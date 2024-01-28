@@ -19,13 +19,14 @@ var bulletPrefab = preload("res://Scenes/CombatScenes/PlayerBullet.tscn");
 const root2 = 1.4142;
 const root2Inverse = 0.70710;
 
+@onready var pew_sound = $pew_sound;
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screenSize = get_viewport_rect().size;
 	position.x = screenSize[0]*0.5;
 	position.y = screenSize[1]*0.5;
 	get_tree().root.connect("size_changed", _on_viewport_size_changed);
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	doMovementPhase(delta);
@@ -38,6 +39,8 @@ func doMovementPhase(delta):
 	var movingDown = 0;
 	if (Input.is_action_pressed("move up")):
 		movingDown -= 1;
+
+		
 	if (Input.is_action_pressed("move down")):
 		movingDown += 1;
 		
@@ -108,6 +111,9 @@ func tryFire(delta):
 		print(bulletInstance.position);
 		print(bulletInstance.direction);
 		get_parent().add_child(bulletInstance);
+		
+		#pew sound when firing
+		pew_sound.play()
 		
 
 func _on_viewport_size_changed():

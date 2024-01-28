@@ -34,9 +34,9 @@ script = ExtResource("4_g580x")
 
 [node name="Points" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1090.0
+offset_left = 1070.0
 offset_top = 19.0
-offset_right = 1130.0
+offset_right = 1119.0
 offset_bottom = 42.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Points"

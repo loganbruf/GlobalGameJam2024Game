@@ -14,6 +14,7 @@ var xDirection = 0;
 var yDirection = 0;
 
 func _ready():
+	health = 2;
 	super._ready();
 	minY = 0.6*screenSize[1]-squareSize;
 	maxY = 0.6*screenSize[1]+squareSize;
