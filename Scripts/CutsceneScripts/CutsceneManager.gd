@@ -7,13 +7,16 @@ var is_dialogue_open : bool = false
 
 func _ready():
 	$EnterKey.hide()
-	is_dialogue_open = false
-		
+	$DinklesDungbottom.hide()
+	$Sunshine.hide()
+
 func _process(delta):
 	if Input.is_action_just_pressed("accept") && !is_dialogue_open:
 		is_dialogue_open = true
 		$AnyKey.hide()
 		$EnterKey.show()
+		$DinklesDungbottom.show()
+		$Sunshine.show()
 		open_dialogue()
 	if Input.is_action_just_pressed("next"):
 		if is_dialogue_open:

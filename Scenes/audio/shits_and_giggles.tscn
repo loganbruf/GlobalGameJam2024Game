@@ -10,17 +10,17 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_khdyl"]
 animations = [{
 "frames": [{
-"duration": 0.7,
-"texture": ExtResource("1_hhr3b")
-}, {
 "duration": 1.0,
-"texture": ExtResource("2_b74h1")
+"texture": ExtResource("4_lmkar")
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_613fd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_lmkar")
+"texture": ExtResource("2_b74h1")
+}, {
+"duration": 0.7,
+"texture": ExtResource("1_hhr3b")
 }],
 "loop": true,
 "name": &"default",
