@@ -43,6 +43,9 @@ offset_bottom = 408.0
 text = "Quit "
 script = ExtResource("2_u5gfm")
 
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [node name="dinkles" type="Sprite2D" parent="."]
 position = Vector2(256, 398)
 scale = Vector2(0.6, 0.6)
@@ -52,3 +55,4 @@ texture = ExtResource("3_1bfol")
 position = Vector2(1012, 308)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("4_x5gx1")
+
