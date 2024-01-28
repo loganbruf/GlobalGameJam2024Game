@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://boy004vyma02x"]
 
 [ext_resource type="PackedScene" uid="uid://bf6p7hvyf0n0a" path="res://Scenes/UIScenes/GameScene.tscn" id="1_c7up4"]
-[ext_resource type="PackedScene" uid="uid://c8gdwv67wpxrn" path="res://Scenes/CombatScenes/CircleEnemy.tscn" id="2_fyq0t"]
-[ext_resource type="PackedScene" uid="uid://ca4widaibuf5u" path="res://Scenes/CombatScenes/ZigzagEnemy.tscn" id="3_uuyk8"]
+[ext_resource type="PackedScene" uid="uid://bbwdm8kcsin0r" path="res://Scenes/CombatScenes/CircleEnemy.tscn" id="2_fyq0t"]
+[ext_resource type="PackedScene" uid="uid://bqj5cjdqm2lq8" path="res://Scenes/CombatScenes/ZigzagEnemy.tscn" id="3_uuyk8"]
 
 [node name="Encounter2" type="Node2D"]
 
