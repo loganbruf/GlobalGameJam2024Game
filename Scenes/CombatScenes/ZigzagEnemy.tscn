@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ca4widaibuf5u"]
+[gd_scene load_steps=5 format=3 uid="uid://bqj5cjdqm2lq8"]
 
 [ext_resource type="Texture2D" uid="uid://2wj6j116hrvu" path="res://Sprites/Filth.webp" id="1_si2ji"]
 [ext_resource type="Script" path="res://Scripts/CombatScripts/ZigzagEnemy.gd" id="1_vas3w"]

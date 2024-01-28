@@ -2,8 +2,6 @@ extends Area2D
 
 @export var speed = 200;
 @export var squareSize = 200;
-@export var maxHealth = 3;
-var health = maxHealth;
 
 @export var playerWidth = 20;
 var playerHalfWidth = playerWidth* 0.5;
@@ -89,7 +87,7 @@ func doCollisionPhase(delta):
 			tookDamage = true;
 		
 		if (tookDamage):
-			health -= highestAttackDamage;
+			GlobalVariables.take_damage(highestAttackDamage)
 			cooldownTimer = cooldownLength;
 			print("took " + str(highestAttackDamage) + " damage");
 
