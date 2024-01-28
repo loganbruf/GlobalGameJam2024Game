@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b343yrdqpwpia"]
+[gd_scene load_steps=6 format=3 uid="uid://b343yrdqpwpia"]
 
 [ext_resource type="Script" path="res://Scripts/CutsceneScripts/CutsceneManager.gd" id="1_foahk"]
 [ext_resource type="Resource" uid="uid://bn3dn1xuagoxy" path="res://dialogue/main.dialogue" id="2_rs80w"]
+[ext_resource type="Texture2D" uid="uid://cmdctdxjd2vsg" path="res://Sprites/Dinkles_Dungbottom.png" id="3_hdau7"]
+[ext_resource type="Texture2D" uid="uid://dlp8de0q52sv3" path="res://Sprites/sunshine.png" id="4_hua0l"]
 
 [sub_resource type="GDScript" id="GDScript_wfgtb"]
 script/source = "extends Label
@@ -39,3 +41,13 @@ offset_top = 11.0
 offset_right = 1129.0
 offset_bottom = 34.0
 text = "Press Enter to skip cutscene"
+
+[node name="DinklesDungbottom" type="Sprite2D" parent="."]
+position = Vector2(273, 351)
+scale = Vector2(0.695682, 0.749057)
+texture = ExtResource("3_hdau7")
+
+[node name="Sunshine" type="Sprite2D" parent="."]
+position = Vector2(930, 353)
+scale = Vector2(0.439239, 0.441558)
+texture = ExtResource("4_hua0l")
