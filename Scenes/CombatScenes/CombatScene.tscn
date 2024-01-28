@@ -1,8 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://can8ppce74pd3"]
-[ext_resource type="AudioStream" uid="uid://dg4m8ogwjlyid" path="res://audio/pew.mp3" id="3_geeuk"]
+[gd_scene load_steps=9 format=3 uid="uid://can8ppce74pd3"]
+
 [ext_resource type="Texture2D" uid="uid://cuka6khwc6ll1" path="res://Sprites/PlayerShip.png" id="2_6d1p1"]
+[ext_resource type="AudioStream" uid="uid://dg4m8ogwjlyid" path="res://audio/pew.mp3" id="3_geeuk"]
 [ext_resource type="Script" path="res://Scripts/CombatScripts/Player.gd" id="3_u6jvw"]
+[ext_resource type="Texture2D" uid="uid://caln1p8o8booc" path="res://Sprites/insidesbox.png" id="5_7hcsp"]
 [ext_resource type="Script" path="res://Scripts/CombatScripts/Area2D.gd" id="5_mlwrf"]
+[ext_resource type="Texture2D" uid="uid://ck3f8hy08260f" path="res://Sprites/boarder.png" id="6_i6xyh"]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_334fr"]
 animations = [{
 "frames": [{
@@ -41,7 +45,20 @@ script = ExtResource("5_mlwrf")
 metadata/_edit_group_ = true
 
 [node name="ColorRect" type="ColorRect" parent="PlayFieldVisibility"]
+visible = false
 z_index = -1
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0.164706, 0.164706, 0.164706, 1)
+
+[node name="Innerbox" type="Sprite2D" parent="PlayFieldVisibility"]
+z_index = -1
+position = Vector2(20, 20)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_7hcsp")
+
+[node name="Border" type="Sprite2D" parent="PlayFieldVisibility"]
+z_index = 2
+position = Vector2(20, 20)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("6_i6xyh")
