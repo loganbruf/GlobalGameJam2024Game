@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bajvnlapgpgpb"]
+[gd_scene load_steps=7 format=3 uid="uid://bajvnlapgpgpb"]
 
 [ext_resource type="Script" path="res://Scripts/UIScripts/StartBtn.gd" id="1_41ghf"]
+[ext_resource type="Texture2D" uid="uid://bvg4ka2adpa32" path="res://button/startbutton.png" id="1_ywp3m"]
 [ext_resource type="Script" path="res://Scripts/UIScripts/QuitBtn.gd" id="2_u5gfm"]
 [ext_resource type="Texture2D" uid="uid://cmdctdxjd2vsg" path="res://Sprites/Dinkles_Dungbottom.png" id="3_1bfol"]
+[ext_resource type="Texture2D" uid="uid://bkqwfffj56a3v" path="res://button/exitbutton.png" id="3_6nxby"]
 [ext_resource type="Texture2D" uid="uid://dlp8de0q52sv3" path="res://Sprites/sunshine.png" id="4_x5gx1"]
 
 [node name="Main Menu" type="Control"]
@@ -25,22 +27,24 @@ scale = Vector2(5, 5)
 text = "Dinkle Dinkle Doink"
 scroll_active = false
 
-[node name="StartBtn" type="Button" parent="."]
+[node name="StartBtn" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 376.0
 offset_top = 212.0
-offset_right = 744.0
-offset_bottom = 292.0
-text = "Start"
+offset_right = 1437.0
+offset_bottom = 497.0
+scale = Vector2(0.33965, 0.351326)
+texture_normal = ExtResource("1_ywp3m")
 script = ExtResource("1_41ghf")
 
-[node name="QuitBtn" type="Button" parent="."]
+[node name="QuitBtn" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 374.0
-offset_top = 329.0
-offset_right = 741.0
-offset_bottom = 408.0
-text = "Quit "
+offset_left = 419.0
+offset_top = 342.0
+offset_right = 1480.0
+offset_bottom = 627.0
+scale = Vector2(0.25287, 0.311676)
+texture_normal = ExtResource("3_6nxby")
 script = ExtResource("2_u5gfm")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

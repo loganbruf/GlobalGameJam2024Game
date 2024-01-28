@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bs2in78bx5kx3"]
+[gd_scene load_steps=3 format=3 uid="uid://bf7hsnfopyhgp"]
 
 [ext_resource type="Script" path="res://Scripts/UIScripts/ReturnBtn.gd" id="1_6lmnv"]
+[ext_resource type="Texture2D" uid="uid://bwevll8r4l5qp" path="res://button/mainmenubutton.png" id="1_dawd0"]
 
 [node name="WinScene" type="Node2D"]
 
@@ -13,18 +14,18 @@ scale = Vector2(5, 5)
 text = "you're win"
 scroll_active = false
 
-[node name="ReturnBtn" type="Button" parent="."]
+[node name="ReturnBtn" type="TextureButton" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 300.0
-offset_top = 500.0
-offset_right = 716.0
-offset_bottom = 563.0
+offset_left = 170.0
+offset_top = 253.0
+offset_right = 1231.0
+offset_bottom = 538.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 40
-text = "Return to Main Menu"
+scale = Vector2(0.47364, 0.564309)
+texture_normal = ExtResource("1_dawd0")
 script = ExtResource("1_6lmnv")
