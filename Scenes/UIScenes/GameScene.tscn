@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://bf6p7hvyf0n0a"]
+[gd_scene load_steps=8 format=3 uid="uid://bf6p7hvyf0n0a"]
 
 [ext_resource type="PackedScene" uid="uid://can8ppce74pd3" path="res://Scenes/CombatScenes/CombatScene.tscn" id="1_gh3md"]
+[ext_resource type="Script" path="res://Scripts/UIScripts/GameBG.gd" id="2_dyd1t"]
 [ext_resource type="Texture2D" uid="uid://b8pdjbm35oylh" path="res://Sprites/bg_placeholder.png" id="2_o312v"]
 [ext_resource type="Texture2D" uid="uid://dwauxpibxbbfm" path="res://Sprites/3hp.png" id="3_mqmpp"]
 [ext_resource type="Script" path="res://Scripts/UIScripts/Healthbar.gd" id="4_g580x"]
+[ext_resource type="Script" path="res://Scripts/UIScripts/Points.gd" id="6_1qcxt"]
+[ext_resource type="PackedScene" uid="uid://clrfp04h0vo8n" path="res://Scenes/audio/shits_and_giggles.tscn" id="6_0545x"]
 
 [node name="GameScene" type="Control"]
 layout_mode = 3
@@ -15,11 +18,12 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="GameBG" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(576, 328)
 scale = Vector2(0.895639, 1)
 texture = ExtResource("2_o312v")
+script = ExtResource("2_dyd1t")
 
 [node name="CombatScene" parent="." instance=ExtResource("1_gh3md")]
 
@@ -27,3 +31,16 @@ texture = ExtResource("2_o312v")
 position = Vector2(117, 53)
 texture = ExtResource("3_mqmpp")
 script = ExtResource("4_g580x")
+
+[node name="Points" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1090.0
+offset_top = 19.0
+offset_right = 1130.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Points"
+script = ExtResource("6_1qcxt")
+
+[node name="ShitsAndGiggles" parent="." instance=ExtResource("6_0545x")]
+position = Vector2(674, 71)

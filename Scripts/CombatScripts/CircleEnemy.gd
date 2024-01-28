@@ -13,6 +13,7 @@ func _ready():
 func doMovementPhase(delta):
 	angle += angularSpeed * delta;
 	position = Vector2(center[0] + radius * cos(angle), center[1] + radius * sin(angle));
+	rotation -= angularSpeed * delta * 5;
 
 func _on_viewport_size_changed():
 	var generalCenterX = center[0] - 0.5 * screenSize[0];

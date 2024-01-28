@@ -1,13 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwjklorx3j2mx"]
+[gd_scene load_steps=5 format=3 uid="uid://brcxo2q0trqvk"]
 
-[ext_resource type="Texture2D" uid="uid://x0r278s1wtvr" path="res://Sprites/icon.svg" id="1_577kl"]
 [ext_resource type="Script" path="res://Scripts/CombatScripts/PlayerBullet.gd" id="1_bhlys"]
+[ext_resource type="Texture2D" uid="uid://cx7nplu4og421" path="res://Sprites/Shot.png" id="2_kxcfu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q2bve"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_577kl")
+"texture": ExtResource("2_kxcfu")
 }],
 "loop": true,
 "name": &"default",
@@ -18,12 +18,9 @@ animations = [{
 
 [node name="PlayerBullet" type="Area2D"]
 script = ExtResource("1_bhlys")
-speed = null
-damage = null
-enemyDamge = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_q2bve")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

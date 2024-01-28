@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://boy004vyma02x"]
+
+[ext_resource type="PackedScene" uid="uid://bf6p7hvyf0n0a" path="res://Scenes/UIScenes/GameScene.tscn" id="1_c7up4"]
+[ext_resource type="PackedScene" uid="uid://bbwdm8kcsin0r" path="res://Scenes/CombatScenes/CircleEnemy.tscn" id="2_fyq0t"]
+[ext_resource type="PackedScene" uid="uid://bqj5cjdqm2lq8" path="res://Scenes/CombatScenes/ZigzagEnemy.tscn" id="3_uuyk8"]
+
+[node name="Encounter2" type="Node2D"]
+
+[node name="GameScene" parent="." instance=ExtResource("1_c7up4")]
+
+[node name="CircleEnemy" parent="." instance=ExtResource("2_fyq0t")]
+center = Vector2(576, 400)
+
+[node name="CircleEnemy2" parent="." instance=ExtResource("2_fyq0t")]
+center = Vector2(576, 300)
+
+[node name="CircleEnemy3" parent="." instance=ExtResource("2_fyq0t")]
+center = Vector2(576, 500)
+
+[node name="ZigzagEnemy" parent="." instance=ExtResource("3_uuyk8")]
+position = Vector2(376, 200)
+zigzagCenter = 376
+
+[node name="ZigzagEnemy2" parent="." instance=ExtResource("3_uuyk8")]
+position = Vector2(776, 200)
+zigzagCenter = 776
+
+[node name="ZigzagEnemy3" parent="." instance=ExtResource("3_uuyk8")]
+position = Vector2(576, 500)
+zigzagCenter = 576

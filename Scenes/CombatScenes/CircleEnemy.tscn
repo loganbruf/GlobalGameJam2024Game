@@ -1,15 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://bw0rgs5xbyowe"]
+[gd_scene load_steps=5 format=3 uid="uid://bbwdm8kcsin0r"]
 
 [ext_resource type="Script" path="res://Scripts/CombatScripts/CircleEnemy.gd" id="1_3ifhv"]
-[ext_resource type="Texture2D" uid="uid://2wj6j116hrvu" path="res://Sprites/Filth.webp" id="2_jlt5r"]
+[ext_resource type="Texture2D" uid="uid://ccbv345cutdg2" path="res://Sprites/Axe.png" id="2_ac40d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xgay1"]
+size = Vector2(22, 52)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j1dky"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_jlt5r")
+"texture": ExtResource("2_ac40d")
 }],
 "loop": true,
 "name": &"default",
@@ -20,6 +21,7 @@ animations = [{
 script = ExtResource("1_3ifhv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 2)
 shape = SubResource("RectangleShape2D_xgay1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
