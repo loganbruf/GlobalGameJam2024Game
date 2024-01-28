@@ -1,15 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqj5cjdqm2lq8"]
+[gd_scene load_steps=5 format=3 uid="uid://ca4widaibuf5u"]
 
-[ext_resource type="Texture2D" uid="uid://2wj6j116hrvu" path="res://Sprites/Filth.webp" id="1_si2ji"]
 [ext_resource type="Script" path="res://Scripts/CombatScripts/ZigzagEnemy.gd" id="1_vas3w"]
+[ext_resource type="Texture2D" path="res://Sprites/ball.png" id="2_pmawd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qe2jk"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_tpdud"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_l8n8q"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_si2ji")
+"texture": ExtResource("2_pmawd")
 }],
 "loop": true,
 "name": &"default",
@@ -24,4 +24,4 @@ shape = SubResource("RectangleShape2D_qe2jk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
-sprite_frames = SubResource("SpriteFrames_tpdud")
+sprite_frames = SubResource("SpriteFrames_l8n8q")
