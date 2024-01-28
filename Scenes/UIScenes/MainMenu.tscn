@@ -18,10 +18,10 @@ grow_vertical = 2
 layout_mode = 0
 offset_left = 212.0
 offset_top = 33.0
-offset_right = 359.0
+offset_right = 372.0
 offset_bottom = 60.0
 scale = Vector2(5, 5)
-text = "(Title of our gaem)"
+text = "Dinkle Dinkle Doink"
 scroll_active = false
 
 [node name="StartBtn" type="Button" parent="."]
