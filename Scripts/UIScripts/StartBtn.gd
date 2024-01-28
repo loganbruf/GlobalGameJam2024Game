@@ -13,5 +13,5 @@ func _process(delta):
 
 func start_game_scene():
 	GlobalVariables.reset_health()
-	SceneVariables.goto_scene("res://Scenes/UIScenes/GameScene.tscn")
+	SceneVariables.goto_scene("res://Scenes/CombatScenes/Encounters/Encounter1.tscn");
 
