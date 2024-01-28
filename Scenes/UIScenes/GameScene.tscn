@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bf6p7hvyf0n0a"]
 
 [ext_resource type="PackedScene" uid="uid://can8ppce74pd3" path="res://Scenes/CombatScenes/CombatScene.tscn" id="1_gh3md"]
-[ext_resource type="Texture2D" uid="uid://2ybd8f60dtyf" path="res://Sprites/Background.png" id="1_rbj00"]
+[ext_resource type="Texture2D" path="res://Sprites/Background.png" id="1_rbj00"]
 [ext_resource type="Script" path="res://Scripts/UIScripts/GameBG.gd" id="2_dyd1t"]
 [ext_resource type="Texture2D" uid="uid://dwauxpibxbbfm" path="res://Sprites/3hp.png" id="3_mqmpp"]
 [ext_resource type="Script" path="res://Scripts/UIScripts/Healthbar.gd" id="4_g580x"]
