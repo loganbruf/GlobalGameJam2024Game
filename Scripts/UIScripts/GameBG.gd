@@ -4,7 +4,6 @@ extends Sprite2D
 var initialScale = Vector2(scale.x, scale.y)
 var initialScreenSize;
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	initialScreenSize = get_viewport_rect().size
