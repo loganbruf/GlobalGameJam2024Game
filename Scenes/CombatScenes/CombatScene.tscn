@@ -1,14 +1,14 @@
 [gd_scene load_steps=6 format=3 uid="uid://can8ppce74pd3"]
 
+[ext_resource type="Texture2D" uid="uid://cuka6khwc6ll1" path="res://Sprites/PlayerShip.png" id="2_6d1p1"]
 [ext_resource type="Script" path="res://Scripts/CombatScripts/Player.gd" id="3_u6jvw"]
-[ext_resource type="Texture2D" uid="uid://bvigsiafddfex" path="res://Sprites/ShitMoneyCryGlasses.png" id="4_tbhi3"]
 [ext_resource type="Script" path="res://Scripts/CombatScripts/Area2D.gd" id="5_mlwrf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_334fr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_tbhi3")
+"texture": ExtResource("2_6d1p1")
 }],
 "loop": true,
 "name": &"default",
@@ -25,7 +25,7 @@ script = ExtResource("3_u6jvw")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.08, 0.08)
 sprite_frames = SubResource("SpriteFrames_334fr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
