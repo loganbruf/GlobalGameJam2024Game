@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://can8ppce74pd3"]
+[gd_scene load_steps=7 format=3 uid="uid://can8ppce74pd3"]
 
+[ext_resource type="AudioStream" uid="uid://dg4m8ogwjlyid" path="res://audio/pew.mp3" id="3_geeuk"]
 [ext_resource type="Script" path="res://Scripts/CombatScripts/Player.gd" id="3_u6jvw"]
 [ext_resource type="Texture2D" uid="uid://bvigsiafddfex" path="res://Sprites/ShitMoneyCryGlasses.png" id="4_tbhi3"]
 [ext_resource type="Script" path="res://Scripts/CombatScripts/Area2D.gd" id="5_mlwrf"]
@@ -30,6 +31,11 @@ sprite_frames = SubResource("SpriteFrames_334fr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("RectangleShape2D_mfttm")
+
+[node name="pew_sound" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("3_geeuk")
+volume_db = -19.727
+pitch_scale = 0.93
 
 [node name="PlayFieldVisibility" type="Area2D" parent="."]
 scale = Vector2(10, 10)

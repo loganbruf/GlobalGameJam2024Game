@@ -40,3 +40,5 @@ offset_right = 741.0
 offset_bottom = 408.0
 text = "Quit "
 script = ExtResource("2_u5gfm")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
