@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bw0rgs5xbyowe"]
+[gd_scene load_steps=5 format=3 uid="uid://c8gdwv67wpxrn"]
 
 [ext_resource type="Script" path="res://Scripts/CombatScripts/CircleEnemy.gd" id="1_3ifhv"]
-[ext_resource type="Texture2D" uid="uid://2wj6j116hrvu" path="res://Sprites/Filth.webp" id="2_jlt5r"]
+[ext_resource type="Texture2D" uid="uid://ccbv345cutdg2" path="res://Sprites/Axe.png" id="2_ac40d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xgay1"]
 
@@ -9,7 +9,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_jlt5r")
+"texture": ExtResource("2_ac40d")
 }],
 "loop": true,
 "name": &"default",
