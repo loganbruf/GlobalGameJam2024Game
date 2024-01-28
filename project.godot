@@ -21,6 +21,10 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 SceneVariables="*res://Scripts/scene_variables.gd"
 GlobalVariables="*res://Scripts/global_variables.gd"
 
+[display]
+
+window/size/resizable=false
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
