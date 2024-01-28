@@ -28,6 +28,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	look_at(get_global_mouse_position());
 	doMovementPhase(delta);
 	doCollisionPhase(delta);
 	tryFire(delta);
@@ -47,7 +48,7 @@ func doMovementPhase(delta):
 	
 	var velocity;
 	if (movingDown != 0 && movingRight != 0):
-		fireDirection = Vector2(movingRight*root2Inverse, movingDown*root2Inverse);
+		fireDirection =  Vector2(movingRight*root2Inverse, movingDown*root2Inverse);
 		velocity = fireDirection * speed;
 	else:
 		velocity = Vector2(movingRight*speed, movingDown*speed);
@@ -100,7 +101,7 @@ func tryFire(delta):
 	
 	if (Input.is_action_pressed("fire")):
 		var bulletInstance = bulletPrefab.instantiate();
-		bulletInstance.direction = fireDirection;
+		bulletInstance.direction = (get_global_mouse_position() - position).normalized();
 		bulletInstance.position = position;
 		shotCooldownTimer = shotCooldownLength;
 		print(bulletInstance.position);
