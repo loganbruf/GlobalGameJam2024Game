@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://ca4widaibuf5u"]
 
 [ext_resource type="Script" path="res://Scripts/CombatScripts/ZigzagEnemy.gd" id="1_vas3w"]
-[ext_resource type="Texture2D" path="res://Sprites/ball.png" id="2_pmawd"]
+[ext_resource type="Texture2D" uid="uid://cfy4rjq77pln7" path="res://Sprites/ball.png" id="2_pmawd"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qe2jk"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_toxo3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l8n8q"]
 animations = [{
@@ -20,8 +20,9 @@ animations = [{
 script = ExtResource("1_vas3w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_qe2jk")
+shape = SubResource("CircleShape2D_toxo3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
+position = Vector2(1, 0)
+scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_l8n8q")
