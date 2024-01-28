@@ -12,8 +12,18 @@ func reset_health():
 	
 func game_over():
 	if curr_health <= 0:
-		reset_health()
+		reset_global_vars()
 		SceneVariables.goto_scene("res://Scenes/UIScenes/GameOver.tscn")
 
-func take_damage(damage):
-	curr_health -= damage
+func take_damage(dmg):
+	curr_health -= dmg
+	
+func add_points(pts):
+	points += pts
+
+func reset_points():
+	points = 0
+	
+func reset_global_vars():
+	reset_points()
+	reset_health()

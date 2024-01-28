@@ -22,6 +22,7 @@ func doBulletCheck():
 			health -= collision.enemyDamage;
 			collision.call_deferred("free");
 			if (health <= 0):
+				GlobalVariables.add_points(1)
 				call_deferred("free");
 
 func doMovementPhase(_delta):
