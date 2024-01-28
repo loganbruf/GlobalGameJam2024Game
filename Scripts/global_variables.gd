@@ -6,17 +6,19 @@ var points: int = 0
 
 var livingEnemies = 0;
 var inFight = false;
+func _ready():
+	reset_health()
+
+func _process(delta):
+	if curr_health <= 0:
+		reset_global_vars()
+		SceneVariables.goto_scene("res://Scenes/UIScenes/GameOver.tscn")
 
 func get_health():
 	return curr_health
 
 func reset_health():
 	curr_health = health
-	
-func game_over():
-	if curr_health <= 0:
-		reset_global_vars()
-		SceneVariables.goto_scene("res://Scenes/UIScenes/GameOver.tscn")
 
 func take_damage(dmg):
 	curr_health -= dmg
