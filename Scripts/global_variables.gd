@@ -4,6 +4,9 @@ extends Node
 var curr_health: int
 var points: int = 0
 
+var livingEnemies = 0;
+var inFight = false;
+
 func get_health():
 	return curr_health
 
@@ -27,3 +30,15 @@ func reset_points():
 func reset_global_vars():
 	reset_points()
 	reset_health()
+	
+func kill_enemy():
+	livingEnemies-=1;
+	if (livingEnemies == 0):
+		inFight = false;
+	
+	print(str(livingEnemies) + " " + str(inFight));
+
+func addEnemy():
+	livingEnemies+=1;
+	print(livingEnemies);
+	inFight = true;

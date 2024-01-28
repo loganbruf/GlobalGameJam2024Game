@@ -9,6 +9,7 @@ var damage = 1;
 func _ready():
 	screenSize = get_viewport_rect().size;
 	get_tree().root.connect("size_changed", _on_viewport_size_changed);
+	GlobalVariables.addEnemy();
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,7 +23,8 @@ func doBulletCheck():
 			health -= collision.enemyDamage;
 			collision.call_deferred("free");
 			if (health <= 0):
-				GlobalVariables.add_points(1)
+				GlobalVariables.add_points(1);
+				GlobalVariables.kill_enemy();
 				call_deferred("free");
 
 func doMovementPhase(_delta):
