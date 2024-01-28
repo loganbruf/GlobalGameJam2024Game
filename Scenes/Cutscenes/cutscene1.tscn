@@ -24,13 +24,13 @@ dialogue_key = "start"
 next_scene = "res://Scenes/UIScenes/GameScene.tscn"
 
 [node name="AnyKey" type="Label" parent="."]
-offset_left = 336.0
-offset_top = 260.0
-offset_right = 739.0
-offset_bottom = 343.0
+offset_left = 196.0
+offset_top = 261.0
+offset_right = 894.0
+offset_bottom = 344.0
 scale = Vector2(1.147, 1)
 theme_override_font_sizes/font_size = 60
-text = "Press Any Key"
+text = "Press Space Key to Start"
 script = SubResource("GDScript_wfgtb")
 
 [node name="EnterKey" type="Label" parent="."]
