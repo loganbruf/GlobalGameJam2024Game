@@ -1,4 +1,4 @@
-extends Button
+extends TextureButton
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,4 +12,5 @@ func _process(delta):
 
 
 func return_to_main():
+	GlobalVariables.resetGame();
 	SceneVariables.goto_scene("res://Scenes/UIScenes/MainMenu.tscn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://clrfp04h0vo8n"]
+[gd_scene load_steps=11 format=3 uid="uid://clrfp04h0vo8n"]
 
 [ext_resource type="Script" path="res://Scripts/UIScripts/ShitsAndGiggles.gd" id="1_cymyf"]
 [ext_resource type="Texture2D" uid="uid://wn5o3injpojv" path="res://Sprites/haha1.png" id="1_hhr3b"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://din8xlmpd2uwj" path="res://Sprites/haha3.png" id="3_613fd"]
 [ext_resource type="Texture2D" uid="uid://dlxfks0jebrnu" path="res://Sprites/haha4.png" id="4_lmkar"]
 [ext_resource type="AudioStream" uid="uid://drfov242w46v3" path="res://audio/Laugh.mp3" id="5_npmkh"]
+[ext_resource type="AudioStream" uid="uid://chgo6jwg6k4q" path="res://audio/backgroundtrack.mp3" id="7_ya0u7"]
+[ext_resource type="Script" path="res://Scripts/AudioScripts/Background.gd" id="8_d8q5p"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_khdyl"]
 animations = [{
@@ -46,3 +48,8 @@ sprite_frames = SubResource("SpriteFrames_khdyl")
 [node name="Haha" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_npmkh")
 script = SubResource("GDScript_elwdq")
+
+[node name="Background" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ya0u7")
+volume_db = -22.409
+script = ExtResource("8_d8q5p")
