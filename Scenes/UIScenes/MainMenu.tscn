@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/UIScripts/StartBtn.gd" id="1_41ghf"]
 [ext_resource type="Script" path="res://Scripts/UIScripts/QuitBtn.gd" id="2_u5gfm"]
-[ext_resource type="Texture2D" uid="uid://cmdctdxjd2vsg" path="res://Sprites/Dinkles_Dungbottom.png" id="3_1bfol"]
+[ext_resource type="Texture2D" path="res://Sprites/Dinkles_Dungbottom.png" id="3_1bfol"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
